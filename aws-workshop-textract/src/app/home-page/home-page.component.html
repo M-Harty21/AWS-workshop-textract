@@ -1,0 +1,42 @@
+
+<br>
+<h1> ID SCANNER, UPLOAD STUDENT CARD TO REGISTER YOU ON THE SYSTEM </h1>
+<br>
+
+<h2> Registered Users (Fake System) </h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th style="font-size: 25px;" scope="col">[Student Num]          </th>
+        <th>     </th>
+        <th>     </th>
+        <th style="font-size: 25px;" scope="col">[Full Name]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentsInSystem">
+        <td style="font-size: 25px;">{{ student.studentNum }}          </td>
+        <td>     </td>
+        <td>     </td>
+        <td style="font-size: 25px;">{{ student.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br>
+<ng-container>
+    <div class="uploadClaim">
+        <ngx-dropzone (change)="onSelect($event)">
+            <ngx-dropzone-label>Upload ID Document</ngx-dropzone-label>
+            <ngx-dropzone-preview *ngIf="file != undefined" [removable]="true" (removed)="onRemove(file)">
+                <ngx-dropzone-label> {{ fileName }} </ngx-dropzone-label>
+            </ngx-dropzone-preview>
+        </ngx-dropzone>
+    </div>
+</ng-container>
+<br>
+<br>
+<br>
+<button style="width: 500px; height: 50px; border-radius: 15px; background-color: rgb(255, 59, 59);" (click)="uploadID();"> Upload & Register Student ID </button>
+<br>
+<br>
