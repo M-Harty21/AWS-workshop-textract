@@ -8,7 +8,7 @@ import { TextractApiService } from '../service/textract-api.service';
 })
 export class HomePageComponent implements OnInit {
   studentsInSystem: any[] = [
-    {studentNum: "1703333", name: "JP Tester"}
+    {studentNum: "17000000", name: "IS Tester"}
   ];
   newStudent: any;
 
